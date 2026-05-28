@@ -3,20 +3,21 @@
 /* Vibe Code Academy — aligned with 03-brand-guidelines.html */
 
 :root {
-  --black: #050505;
-  --charcoal: #101010;
-  --graphite: #1d1d1d;
-  --soft-black: #151515;
-  --white: #f7f4ec;
-  --paper: #efe9dd;
-  --muted: #b7b0a3;
-  --body-muted: #504b43;
-  --line: rgba(247, 244, 236, 0.18);
-  --line-dark: rgba(5, 5, 5, 0.16);
-  --acid: #d7ff46;
-  --blue: #4f6dff;
-  --coral: #ff6b4a;
-  --cyan: #77e6e1;
+  /* 1980s rap culture — boombox nights, gold chains, street neon */
+  --black: #0a0014;
+  --charcoal: #1a0a2e;
+  --graphite: #2d1b4e;
+  --soft-black: #241538;
+  --white: #fff5e1;
+  --paper: #e8c96a;
+  --muted: #d4a574;
+  --body-muted: #6b4423;
+  --line: rgba(255, 215, 0, 0.22);
+  --line-dark: rgba(10, 0, 20, 0.2);
+  --acid: #ffd700;
+  --blue: #bf00ff;
+  --coral: #ff1493;
+  --cyan: #00fff0;
   --radius: 28px;
   --radius-sm: 18px;
   --page-max: 1260px;
@@ -117,7 +118,7 @@ a {
   height: 10px;
   border-radius: 50%;
   background: var(--acid);
-  box-shadow: 0 0 30px rgba(215, 255, 70, 0.75);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.75);
   flex-shrink: 0;
 }
 
@@ -503,8 +504,8 @@ a {
   padding: 22px 18px;
 }
 
-.step:nth-child(2) { border-color: rgba(79, 109, 255, 0.35); }
-.step:nth-child(4) { border-color: rgba(119, 230, 225, 0.35); }
+.step:nth-child(2) { border-color: rgba(191, 0, 255, 0.45); }
+.step:nth-child(4) { border-color: rgba(0, 255, 240, 0.45); }
 
 .step::before {
   counter-increment: step;
@@ -585,7 +586,7 @@ a {
 
 .price-card.featured {
   border-color: var(--acid);
-  box-shadow: 0 0 0 1px rgba(215, 255, 70, 0.2);
+  box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.35);
 }
 
 .price-amount {
@@ -621,11 +622,11 @@ a {
 }
 
 .signup-form {
-  background: #0b0b0b;
+  background: #12001f;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px;
-  color: #e8e2d6;
+  color: #ffe8c8;
 }
 
 .form-group { margin-bottom: 20px; }
@@ -685,12 +686,12 @@ a {
 .form-status.visible { display: block; }
 
 .form-status.error {
-  background: rgba(255, 107, 74, 0.15);
+  background: rgba(255, 20, 147, 0.2);
   border: 1px solid var(--coral);
 }
 
 .form-status.success {
-  background: rgba(215, 255, 70, 0.12);
+  background: rgba(255, 215, 0, 0.15);
   border: 1px solid var(--acid);
 }
 
@@ -808,7 +809,7 @@ details p {
   height: 10px;
   border-radius: 50%;
   background: var(--acid);
-  box-shadow: 0 0 30px rgba(215, 255, 70, 0.75);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.75);
   display: inline-block;
   margin-right: 10px;
   vertical-align: middle;
