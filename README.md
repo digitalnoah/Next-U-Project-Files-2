@@ -20,6 +20,19 @@ Phase-orchestrated landing page workshop materials for **Vibe Code Academy**: pl
 
 See `demo-1C-orchestrator/AGENTS.md` — e.g. **Build phase 1 with the orchestrator**, **QA test phase 1 with the orchestrator**.
 
+## GitHub
+
+This folder is its own git repository (separate from the parent `a10x_2025` monorepo).
+
+After [GitHub CLI](https://cli.github.com/) login (`gh auth login`), create and push the remote:
+
+```bash
+cd /Applications/MAMP/htdocs/a10x_2025/docs/client-work/Next-U
+gh repo create vibe-code-academy-next-u --private --source=. --remote=origin --description "Vibe Code Academy workshop: phase orchestrator and landing prototype" --push
+```
+
+Use a different repo name if you prefer; `--public` instead of `--private` if it should be open.
+
 ## License
 
 Client workshop materials — private unless otherwise agreed.
