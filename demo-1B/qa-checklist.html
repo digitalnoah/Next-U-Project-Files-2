@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Code Academy — Self-QA Checklist</title>
+  <style>
+    :root {
+      --black: #050505;
+      --muted: #555;
+      --line: #ccc;
+      --pass: #0a6b0a;
+      --fail: #b00;
+      --acid: #d7ff46;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+      line-height: 1.5;
+      color: var(--black);
+    }
+
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+      margin: 20px 0;
+      padding: 14px 16px;
+      background: #f5f5f0;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .progress { font-weight: 600; }
+
+    .toolbar button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .toolbar button:hover { border-color: var(--black); }
+
+    .saved-hint {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th { background: #f5f5f5; }
+
+    th.result-col { width: 140px; }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .ai-result {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .ai-result.pass { color: var(--pass); }
+    .ai-result.fail { color: var(--fail); }
+
+    .check-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .check-label input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--black);
+      cursor: pointer;
+    }
+
+    .check-label.pass-label input { accent-color: var(--pass); }
+    .check-label.fail-label input { accent-color: var(--fail); }
+
+    tr.row-pass td.result-cell { background: rgba(10, 107, 10, 0.06); }
+    tr.row-fail td.result-cell { background: rgba(187, 0, 0, 0.06); }
+
+    .footer-meta { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Vibe Code Academy — Self-QA Checklist</h1>
+  <p>Review <code>prototype.html</code> in the browser and mark each item yourself. Your choices are saved automatically in this browser.</p>
+
+  <div class="toolbar">
+    <span class="progress" id="progressText">0 of 8 checked</span>
+    <button type="button" id="clearBtn">Clear all checks</button>
+    <span class="saved-hint" id="savedHint" aria-live="polite"></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Check</th>
+        <th class="result-col">Your result</th>
+        <th>Builder notes</th>
+      </tr>
+    </thead>
+    <tbody id="checklistBody">
+      <tr data-id="content-completeness">
+        <td>Content completeness — what VCA is, who for, problem, build, planning, kit, cost, next step</td>
+        <td class="result-cell">
+          <span class="ai-result pass">AI: PASS</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">All required messages present across hero, problem, outcomes, how-it-works, examples, kit, pricing, FAQ, signup.</td>
+      </tr>
+      <tr data-id="cta-anchors">
+        <td>CTA and anchor behavior</td>
+        <td class="result-cell">
+          <span class="ai-result pass">AI: PASS</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">Primary CTA → #signup; secondary → #examples, #pricing; nav anchors with scroll-padding for sticky header.</td>
+      </tr>
+      <tr data-id="brand-typography">
+        <td>Brand and typography</td>
+        <td class="result-cell">
+          <span class="ai-result pass">AI: PASS</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">Studio black / bone / acid palette; no SaaS gradients; uppercase headlines; practical voice.</td>
+      </tr>
+      <tr data-id="form-validation">
+        <td>Form validation and success flow</td>
+        <td class="result-cell">
+          <span class="ai-result pass">AI: PASS</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">Empty/invalid email shows error; valid submit shows success + demo note; aria-live on status.</td>
+      </tr>
+      <tr data-id="accessibility">
+        <td>Accessibility — labels, contrast, focus, semantics</td>
+        <td class="result-cell">
+          <span class="ai-result pass">AI: PASS</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">Labeled email, skip link, semantic regions, focus rings, details/summary FAQ.</td>
+      </tr>
+      <tr data-id="responsive">
+        <td>Responsive layout</td>
+        <td class="result-cell">
+          <span class="ai-result pass">AI: PASS</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">Grids collapse at 960px / 720px; mobile nav toggle.</td>
+      </tr>
+      <tr data-id="logo-assets">
+        <td>Logo assets</td>
+        <td class="result-cell">
+          <span class="ai-result fail">AI: PARTIAL</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">Paths reference 03-logo-simple.jpg; files not in repo—wordmark fallback on image error.</td>
+      </tr>
+      <tr data-id="sixty-second">
+        <td>60-second comprehension (project brief)</td>
+        <td class="result-cell">
+          <span class="ai-result pass">AI: PASS</span>
+          <div class="check-group">
+            <label class="check-label pass-label"><input type="checkbox" class="cb-pass" /> Pass</label>
+            <label class="check-label fail-label"><input type="checkbox" class="cb-fail" /> Fail</label>
+          </div>
+        </td>
+        <td class="note">Hero states promise, audience, and primary action above the fold.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="footer-meta"><strong>Files:</strong> <code>prototype.html</code>, <code>prototype.css</code>, <code>qa-checklist.html</code></p>
+  <p class="footer-meta"><strong>Simulated:</strong> Email capture, kit delivery, workshop dates (TBD), payment/booking links.</p>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = "vca-qa-checklist-v1";
+      var tbody = document.getElementById("checklistBody");
+      var progressText = document.getElementById("progressText");
+      var savedHint = document.getElementById("savedHint");
+      var clearBtn = document.getElementById("clearBtn");
+      var rows = tbody ? Array.prototype.slice.call(tbody.querySelectorAll("tr[data-id]")) : [];
+
+      function loadState() {
+        try {
+          var raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : {};
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveState(state) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          if (savedHint) {
+            savedHint.textContent = "Saved " + new Date().toLocaleTimeString();
+          }
+        } catch (e) {
+          if (savedHint) {
+            savedHint.textContent = "Could not save (storage unavailable)";
+          }
+        }
+      }
+
+      function readRow(row) {
+        var pass = row.querySelector(".cb-pass");
+        var fail = row.querySelector(".cb-fail");
+        return {
+          pass: !!(pass && pass.checked),
+          fail: !!(fail && fail.checked)
+        };
+      }
+
+      function applyRow(row, data) {
+        var pass = row.querySelector(".cb-pass");
+        var fail = row.querySelector(".cb-fail");
+        if (pass) pass.checked = !!data.pass;
+        if (fail) fail.checked = !!data.fail;
+        updateRowStyle(row);
+      }
+
+      function updateRowStyle(row) {
+        var data = readRow(row);
+        row.classList.remove("row-pass", "row-fail");
+        if (data.pass) row.classList.add("row-pass");
+        if (data.fail) row.classList.add("row-fail");
+      }
+
+      function buildStateFromDom() {
+        var state = {};
+        rows.forEach(function (row) {
+          var id = row.getAttribute("data-id");
+          if (id) state[id] = readRow(row);
+        });
+        return state;
+      }
+
+      function updateProgress() {
+        var state = buildStateFromDom();
+        var checked = 0;
+        var pass = 0;
+        var fail = 0;
+        rows.forEach(function (row) {
+          var id = row.getAttribute("data-id");
+          var item = state[id];
+          if (item && (item.pass || item.fail)) {
+            checked += 1;
+            if (item.pass) pass += 1;
+            if (item.fail) fail += 1;
+          }
+        });
+        if (progressText) {
+          progressText.textContent =
+            checked + " of " + rows.length + " checked" +
+            (checked ? " (" + pass + " pass, " + fail + " fail)" : "");
+        }
+      }
+
+      function persist() {
+        saveState(buildStateFromDom());
+        updateProgress();
+      }
+
+      function init() {
+        var state = loadState();
+        rows.forEach(function (row) {
+          var id = row.getAttribute("data-id");
+          applyRow(row, state[id] || { pass: false, fail: false });
+
+          var passCb = row.querySelector(".cb-pass");
+          var failCb = row.querySelector(".cb-fail");
+
+          if (passCb) {
+            passCb.addEventListener("change", function () {
+              if (passCb.checked && failCb) failCb.checked = false;
+              updateRowStyle(row);
+              persist();
+            });
+          }
+
+          if (failCb) {
+            failCb.addEventListener("change", function () {
+              if (failCb.checked && passCb) passCb.checked = false;
+              updateRowStyle(row);
+              persist();
+            });
+          }
+        });
+
+        updateProgress();
+
+        if (savedHint && Object.keys(state).length) {
+          savedHint.textContent = "Loaded saved checks";
+        }
+      }
+
+      if (clearBtn) {
+        clearBtn.addEventListener("click", function () {
+          if (!window.confirm("Clear all your checkmarks?")) return;
+          try {
+            localStorage.removeItem(STORAGE_KEY);
+          } catch (e) { /* ignore */ }
+          rows.forEach(function (row) {
+            applyRow(row, { pass: false, fail: false });
+          });
+          if (savedHint) savedHint.textContent = "Cleared";
+          updateProgress();
+        });
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>

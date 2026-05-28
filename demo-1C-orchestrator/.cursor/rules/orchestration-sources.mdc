@@ -1,0 +1,13 @@
+---
+description: Phase orchestrator — where to read build, QA, and sequence
+alwaysApply: true
+---
+
+# Orchestration sources
+
+- **Build:** `demo-1C-orchestrator/build-plan/phases/*` — implement only what the active phase build file specifies.
+- **QA:** `demo-1C-orchestrator/QA-plan/*-phase-*` — verify every outcome; record evidence before gate decision.
+- **Sequence:** `demo-1C-orchestrator/project-plan/09-build-order.md` — one phase at a time; no skip.
+- **Status:** `demo-1C-orchestrator/QA-plan/QA-results/00-index.md` — do not start phase N+1 until phase N is `pass`, or `pass_with_risks` with human HTML checklist complete.
+- **Deliverable:** `demo-1B/prototype.html` (embedded CSS/JS; logos `03-logo-*.png|jpg` in `demo-1B/`).
+- **Legacy detail:** `demo-1C-orchestrator/phase-plans/` is reference only; orchestrator files win on conflict.

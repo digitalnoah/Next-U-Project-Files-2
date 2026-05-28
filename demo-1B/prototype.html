@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Code Academy — Turn Ideas Into Prototypes</title>
+  <meta name="description" content="A practical workshop for turning rough product ideas into visible, testable prototypes with Cursor and AI-assisted workflows." />
+  <!-- Phase 2: brand CSS embedded (minified from prototype.css) -->
+  <style>
+:root{--black:#050505;--charcoal:#101010;--graphite:#1d1d1d;--soft-black:#151515;--white:#f7f4ec;--paper:#efe9dd;--muted:#b7b0a3;--body-muted:#504b43;--line:rgba(247,244,236,0.18);--line-dark:rgba(5,5,5,0.16);--acid:#d7ff46;--blue:#4f6dff;--coral:#ff6b4a;--cyan:#77e6e1;--radius:28px;--radius-sm:18px;--page-max:1260px;--gutter:28px;--nav-h:auto;}*,*::before,*::after{box-sizing:border-box;}html{scroll-behavior:smooth;scroll-padding-top:100px;overflow-x:clip;}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--white);background:var(--black);line-height:1.45;overflow-x:clip;}img{max-width:100%;height:auto;display:block;}a{color:var(--white);text-decoration:none;}.page{width:100%;max-width:var(--page-max);margin-left:auto;margin-right:auto;padding-left:var(--gutter);padding-right:var(--gutter);}.wrap{width:100%;max-width:var(--page-max);margin-left:auto;margin-right:auto;padding-left:var(--gutter);padding-right:var(--gutter);}.skip-link{position:absolute;left:-9999px;top:0;z-index:200;padding:12px 18px;background:var(--acid);color:var(--black);font-weight:800;}.skip-link:focus{left:var(--gutter);top:var(--gutter);}.site-header{position:sticky;top:0;z-index:100;background:var(--black);border-bottom:1px solid var(--line);}.header-inner{max-width:var(--page-max);margin:0 auto;padding:22px var(--gutter) 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}.brand{display:inline-flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;flex-shrink:0;}.brand-dot{width:10px;height:10px;border-radius:50%;background:var(--acid);box-shadow:0 0 30px rgba(215,255,70,0.75);flex-shrink:0;}.brand-icon{width:44px;height:44px;border-radius:12px;background:var(--white);overflow:hidden;display:grid;place-items:center;}.brand-icon img{width:38px;height:38px;object-fit:contain;}.brand-wordmark{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:0.06em;line-height:1.2;color:var(--white);}.brand-wordmark span{display:block;color:var(--acid);font-size:11px;letter-spacing:0.08em;margin-top:2px;}.nav-toggle{display:none;appearance:none;border:1px solid var(--line);background:var(--graphite);color:var(--white);border-radius:12px;padding:10px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;cursor:pointer;}.site-header nav{display:flex;align-items:center;}.nav-links{display:flex;align-items:center;flex-wrap:wrap;gap:8px 22px;list-style:none;margin:0;padding:0;}.nav-links a:not(.btn){font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--white);transition:color 0.15s;}.nav-links a:not(.btn):hover,.nav-links a:not(.btn):focus-visible{color:var(--acid);outline:none;}.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 19px;font-weight:850;text-transform:uppercase;letter-spacing:0.04em;font-size:12px;text-decoration:none;cursor:pointer;border:1px solid var(--black);transition:transform 0.15s,background 0.15s,color 0.15s,border-color 0.15s;}.btn:focus-visible{outline:2px solid var(--acid);outline-offset:3px;}.btn-primary{background:var(--black);color:var(--white);border-color:var(--black);}.btn-primary:hover{background:var(--graphite);border-color:var(--graphite);transform:translateY(-1px);}.btn-accent{background:var(--acid);color:var(--black);border-color:var(--acid);}.btn-accent:hover{filter:brightness(1.05);transform:translateY(-1px);}.btn-secondary{background:transparent;color:var(--white);border-color:var(--line);}.btn-secondary:hover{border-color:var(--white);background:var(--graphite);}.nav-links .btn-accent{color:var(--black);}.section{padding:44px 0;border-top:1px solid var(--line);}.section-band{background:var(--charcoal);}.section-paper{background:var(--paper);color:var(--black);border-top-color:var(--line-dark);}.section-paper .kicker{color:var(--acid);filter:saturate(1.1);}.section-paper .section-title{color:var(--black);}.section-paper .section-lead{color:var(--body-muted);}.section-paper .card.light{background:var(--white);}.section-paper .card.light p{color:var(--body-muted);}.section-paper .card.light h3{color:var(--black);}.section-head{display:grid;grid-template-columns:240px 1fr;gap:40px;margin-bottom:28px;align-items:start;}.section-head .kicker{margin-top:8px;}.section-head-body .section-title{margin-top:0;}.section-head-body .section-lead{margin-bottom:0;}.kicker{display:block;text-transform:uppercase;letter-spacing:0.08em;font-size:13px;color:var(--acid);font-weight:700;}.section-title{margin:0 0 18px;font-size:clamp(34px,5vw,72px);line-height:0.92;letter-spacing:-0.065em;font-weight:860;max-width:820px;color:var(--white);}.section-lead{margin:0 0 28px;color:var(--muted);font-size:19px;max-width:760px;letter-spacing:-0.02em;}.section-cta{margin-top:28px;}.grid-2,.grid-3,.grid-4{display:grid;gap:18px;}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr));}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr));}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr));}.card{background:var(--soft-black);border:1px solid var(--line);border-radius:var(--radius);padding:26px;min-height:0;}.card h3{margin:0 0 14px;font-size:24px;line-height:1;letter-spacing:-0.04em;color:var(--white);}.card p{margin:0;color:var(--muted);font-size:16px;}.card.light{background:var(--white);color:var(--black);border-color:var(--line-dark);}.card.light h3{color:var(--black);}.card.light p{color:var(--body-muted);}.label,.label-pill{display:inline-block;margin-bottom:18px;color:var(--black);background:var(--acid);border-radius:999px;padding:7px 11px;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;font-weight:800;}.pill-blue{background:var(--blue);color:var(--white);}.pill-coral{background:var(--coral);color:var(--black);}.pill-cyan{background:var(--cyan);color:var(--black);}.pill-paper{background:var(--paper);color:var(--black);border:1px solid var(--line-dark);}.hero{padding:56px 0 70px;border-top:none;}.hero-grid{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:46px;align-items:end;}.hero-grid>*{min-width:0;}.hero-logo-panel{width:240px;max-width:100%;height:240px;border-radius:34px;background:var(--white);display:grid;place-items:center;box-shadow:0 40px 90px rgba(0,0,0,0.38);justify-self:start;}.hero-logo-panel img{width:78%;height:78%;max-width:210px;max-height:210px;object-fit:contain;}.hero-content{min-width:0;}.hero h1{margin:0 0 24px;font-size:clamp(54px,9vw,112px);line-height:0.88;letter-spacing:-0.085em;font-weight:900;text-transform:uppercase;max-width:920px;color:var(--white);overflow-wrap:break-word;word-wrap:break-word;}.hero-sub{margin:0 0 28px;font-size:clamp(18px,2vw,26px);color:var(--muted);max-width:740px;letter-spacing:-0.025em;}.hero-sub strong{color:var(--white);font-weight:760;}.hero-facts{display:flex;flex-wrap:wrap;gap:12px 24px;margin:0 0 28px;padding:0;list-style:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);}.hero-facts li::before{content:"•";color:var(--acid);margin-right:8px;}.hero-cta{display:flex;flex-wrap:wrap;gap:12px;}.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;counter-reset:step;}.step{background:var(--graphite);border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px 18px;}.step:nth-child(2){border-color:rgba(79,109,255,0.35);}.step:nth-child(4){border-color:rgba(119,230,225,0.35);}.step::before{counter-increment:step;content:counter(step,decimal-leading-zero);display:block;font-size:11px;font-weight:800;color:var(--acid);letter-spacing:0.08em;margin-bottom:12px;}.step:nth-child(2)::before{color:var(--blue);}.step:nth-child(5)::before{color:var(--cyan);}.step h3{margin:0 0 8px;font-size:18px;letter-spacing:-0.03em;color:var(--white);}.step p{margin:0;font-size:14px;color:var(--muted);}.specimen{background:var(--white);color:var(--black);border-radius:var(--radius);padding:34px;border:1px solid var(--line-dark);margin-top:18px;}.specimen h3{font-size:clamp(28px,4vw,48px);line-height:0.9;letter-spacing:-0.06em;text-transform:uppercase;margin:0 0 18px;color:var(--black);}.specimen p{max-width:720px;color:var(--body-muted);font-size:18px;margin:0 0 18px;}.specimen .button-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;}.specimen .btn-primary{background:var(--black);color:var(--white);}.specimen .btn-secondary{color:var(--black);border-color:var(--line-dark);}.price-card{display:flex;flex-direction:column;height:100%;}.price-card.featured{border-color:var(--acid);box-shadow:0 0 0 1px rgba(215,255,70,0.2);}.price-amount{font-size:36px;font-weight:900;letter-spacing:-0.05em;margin:8px 0 16px;color:var(--white);}.price-list{margin:0 0 24px;padding:0;list-style:none;flex:1;}.price-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--muted);}.price-list li:last-child{border-bottom:none;}.signup-panel{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}.signup-form{background:#0b0b0b;border:1px solid var(--line);border-radius:var(--radius);padding:26px;color:#e8e2d6;}.form-group{margin-bottom:20px;}.form-group label{display:block;margin-bottom:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--acid);}.form-group input{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--black);color:var(--white);font-size:16px;font-family:inherit;}.form-group input::placeholder{color:var(--muted);opacity:0.8;}.form-group input:focus{outline:2px solid var(--acid);outline-offset:2px;border-color:transparent;}.form-group input[aria-invalid="true"]{border-color:var(--coral);}.form-note{margin:14px 0 0;font-size:14px;color:var(--muted);line-height:1.5;}.form-status{margin-top:16px;padding:14px 16px;border-radius:14px;font-size:14px;display:none;color:var(--white);}.form-status.visible{display:block;}.form-status.error{background:rgba(255,107,74,0.15);border:1px solid var(--coral);}.form-status.success{background:rgba(215,255,70,0.12);border:1px solid var(--acid);}.demo-badge{display:inline-block;margin-top:16px;padding:8px 12px;border-radius:var(--radius-sm);background:var(--graphite);border:1px dashed var(--line);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}.faq-list{max-width:100%;}details{border-bottom:1px solid var(--line);padding:20px 0;}details summary{cursor:pointer;font-weight:700;font-size:17px;letter-spacing:-0.02em;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--white);}details summary::-webkit-details-marker{display:none;}details summary::after{content:"+";color:var(--acid);font-weight:900;}details[open] summary::after{content:"−";}details p{margin:14px 0 0;color:var(--muted);font-size:16px;max-width:760px;}.site-footer{border-top:1px solid var(--line);padding:34px 0 20px;color:var(--muted);font-size:13px;}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px;margin-bottom:34px;}.footer-brand-title{color:var(--white);text-transform:uppercase;letter-spacing:0.06em;font-weight:800;}.footer-grid h4{margin:0 0 12px;color:var(--white);font-size:12px;text-transform:uppercase;letter-spacing:0.08em;}.footer-grid ul{margin:0;padding:0;list-style:none;}.footer-grid p{margin:0 0 12px;}.footer-grid li{margin-bottom:8px;}.footer-grid a{color:var(--muted);text-decoration:none;}.footer-grid a:hover{color:var(--white);}.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:20px;border-top:1px solid var(--line);text-transform:uppercase;letter-spacing:0.06em;font-size:12px;}.accent-dot{width:10px;height:10px;border-radius:50%;background:var(--acid);box-shadow:0 0 30px rgba(215,255,70,0.75);display:inline-block;margin-right:10px;vertical-align:middle;}@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px;align-items:start;}.hero-content{order:1;}.hero-logo-panel{order:2;width:min(200px,55vw);height:auto;aspect-ratio:1;justify-self:center;margin:0 auto;}.hero h1{font-size:clamp(36px,10vw,72px);letter-spacing:-0.06em;line-height:0.92;}.hero-sub{font-size:clamp(17px,4vw,22px);}}@media (max-width:850px){.section-head{grid-template-columns:1fr;gap:12px;}.section-head .kicker{margin-top:0;}.signup-panel,.footer-grid{grid-template-columns:1fr;}.grid-3,.grid-4{grid-template-columns:repeat(2,minmax(0,1fr));}.steps{grid-template-columns:repeat(2,minmax(0,1fr));}.site-header{position:sticky;}.header-inner{align-items:center;}.nav-toggle{display:block;margin-left:auto;}.site-header nav{width:100%;}.nav-links{display:flex;width:100%;flex-direction:column;align-items:stretch;padding-top:12px;gap:14px;}.nav-links.open{display:flex;}.nav-links .btn{width:100%;justify-content:center;}}@media (max-width:600px){:root{--gutter:20px;}.wrap,.page{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));}.header-inner{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));}.header-inner{padding-top:16px;padding-bottom:16px;gap:12px;}.brand{gap:8px;min-width:0;flex:1;}.brand-wordmark{font-size:11px;}.brand-icon{width:40px;height:40px;flex-shrink:0;}.nav-toggle{flex-shrink:0;}.hero{padding:32px 0 48px;}.hero h1{font-size:clamp(28px,9.5vw,44px);letter-spacing:-0.04em;line-height:0.95;}.hero-logo-panel{width:min(160px,50vw);border-radius:24px;}.hero-cta{flex-direction:column;align-items:stretch;}.hero-cta .btn{width:100%;justify-content:center;}.section-title{font-size:clamp(28px,8vw,40px);letter-spacing:-0.05em;}.section-lead{font-size:17px;}.section-head{gap:16px;}.grid-2,.grid-3,.grid-4,.steps{grid-template-columns:1fr;}.section{padding:36px 0;}.card,.signup-form,.specimen{padding:20px;}.specimen h3{font-size:clamp(22px,7vw,32px);}.btn{padding:13px 18px;}}@media (max-width:380px){.brand-dot{display:none;}.brand-wordmark span{font-size:10px;}.hero h1{font-size:1.65rem;}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="#hero" aria-label="Vibe Code Academy home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-icon">
+          <img src="03-logo-simple.jpg" alt="" width="38" height="38" onerror="this.style.display='none'" />
+        </span>
+        <span class="brand-wordmark">Vibe Code<span>Academy</span></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#outcomes">Outcomes</a></li>
+          <li><a href="#how-it-works">Process</a></li>
+          <li><a href="#starter-kit">Starter kit</a></li>
+          <li><a href="#examples">Projects</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="btn btn-accent" href="#signup">Get the Prototype Starter Kit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="hero">
+      <div class="hero-grid">
+        <div class="hero-logo-panel" aria-hidden="true">
+          <img src="03-logo-simple.jpg" alt="" width="210" height="210" onerror="this.parentElement.innerHTML='<span style=\'font-size:48px;font-weight:900;color:#050505\'>VC</span>'" />
+        </div>
+        <div class="hero-content">
+          <span class="kicker">Practical AI-assisted building</span>
+          <h1>Turn your idea into a prototype you can show.</h1>
+          <p class="hero-sub">
+            <strong>Vibe Code Academy</strong> teaches students, marketers, founders, and operators with product ideas how to plan the work, guide <strong>Cursor</strong>, test the output, and avoid confusing a polished screen with a real product.
+          </p>
+          <ul class="hero-facts">
+            <li>Live online workshop</li>
+            <li>One focused session</li>
+            <li>No engineering degree required</li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-accent" href="#signup">Get the Prototype Starter Kit</a>
+            <a class="btn btn-secondary" href="#examples">See what you will build</a>
+            <a class="btn btn-secondary" href="#pricing">Join the next workshop</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap section-band" id="problem">
+      <div class="section-head">
+        <span class="kicker">The gap</span>
+        <div class="section-head-body">
+          <h2 class="section-title">You have the idea. AI does not know what to build yet.</h2>
+          <p class="section-lead">
+            Most people get stuck between talking about an idea and making something real. AI tools are powerful, but without structure you end up with vague prompts, generic output, and no way to judge what is useful.
+          </p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="label-pill">Stuck</span>
+          <h3>Prompts too vague</h3>
+          <p>“Build me an app for my idea” produces something that looks impressive until you need to revise, test, or explain what it proves.</p>
+        </article>
+        <article class="card">
+          <span class="label-pill pill-coral">Risk</span>
+          <h3>Polish hides weak thinking</h3>
+          <p>A slick UI can mask fake functionality, unclear users, and missing product logic. Pretty is not the same as useful.</p>
+        </article>
+        <article class="card">
+          <span class="label-pill">Fix</span>
+          <h3>Process beats magic</h3>
+          <p>AI is an execution layer. It moves fast when you provide direction, context, constraints, and feedback.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="outcomes">
+      <div class="section-head">
+        <span class="kicker">What you leave with</span>
+        <div class="section-head-body">
+          <h2 class="section-title">A prototype artifact—not a finished product.</h2>
+          <p class="section-lead">
+            By the end of the workshop you can explain your idea clearly, show a simple build, understand what is real versus simulated, and decide what to improve next.
+          </p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Explain the product</h3>
+          <p>Target user, problem, prototype goal, and success criteria—written in a brief you can reuse.</p>
+        </article>
+        <article class="card">
+          <h3>Build inside Cursor</h3>
+          <p>Move out of the chat box into a project folder. Generate, review, and improve AI-assisted work with context preserved.</p>
+        </article>
+        <article class="card">
+          <h3>Test with a real person</h3>
+          <p>Use pair testing to learn what is clear, confusing, or missing—then iterate on what matters.</p>
+        </article>
+        <article class="card">
+          <h3>Repeat the workflow</h3>
+          <p>Leave with templates and a next-step plan you can run again on the next idea.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap section-band" id="how-it-works">
+      <div class="section-head">
+        <span class="kicker">How it works</span>
+        <div class="section-head-body">
+          <h2 class="section-title">Plan → Build → Test → Improve → Share</h2>
+          <p class="section-lead">
+            One focused workshop walks you through the full loop. You are not learning to become a software engineer overnight—you are learning to direct AI-assisted work with <strong>Cursor</strong> in a real project folder.
+          </p>
+        </div>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <h3>Plan</h3>
+          <p>Define user, problem, scope, and what the prototype needs to prove before you ask AI to build.</p>
+        </article>
+        <article class="step">
+          <h3>Build</h3>
+          <p>Guide Cursor phase by phase—not one endless chat thread.</p>
+        </article>
+        <article class="step">
+          <h3>Test</h3>
+          <p>Run the prototype with another person. Capture what works and what confuses.</p>
+        </article>
+        <article class="step">
+          <h3>Improve</h3>
+          <p>Revise based on feedback. Know what is simulated vs functional in your demo.</p>
+        </article>
+        <article class="step">
+          <h3>Share</h3>
+          <p>Document progress and next steps so the artifact is ready to show a teammate, client, or class.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap section-paper" id="starter-kit">
+      <div class="section-head">
+        <span class="kicker">Free download</span>
+        <div class="section-head-body">
+          <h2 class="section-title">Prototype Starter Kit — start before the workshop.</h2>
+          <p class="section-lead">
+            <strong>Why planning matters:</strong> AI moves fast when you know the user, problem, and what the prototype must prove. The free kit gives you templates and structure so you do not start with vibes-only prompts.
+          </p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card light">
+          <h3>Planning template</h3>
+          <p>User, problem, scope, success criteria in one place.</p>
+        </article>
+        <article class="card light">
+          <h3>Build prompt template</h3>
+          <p>Structured prompts that give Cursor direction instead of vibes-only instructions.</p>
+        </article>
+        <article class="card light">
+          <h3>Project file structure</h3>
+          <p>A simple folder layout so you stop losing context across long AI chats.</p>
+        </article>
+      </div>
+      <div class="specimen">
+        <h3>Build the thing. Then make it better.</h3>
+        <p>What the class helps you build: a scoped, visible prototype—landing page, dashboard mockup, portfolio, or workflow concept—not production software.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="#signup">Get the Prototype Starter Kit</a>
+          <a class="btn btn-secondary" href="#examples">See what you will build</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="audience">
+      <div class="section-head">
+        <span class="kicker">Who it is for</span>
+        <div class="section-head-body">
+          <h2 class="section-title">Smart beginners with real ideas.</h2>
+          <p class="section-lead">
+            Mixed audience: students, marketers, founders, and operators. You do not need to be an engineer—you need to think clearly, plan the work, and test what you build.
+          </p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Students &amp; pitch builders</h3>
+          <p>Make a product concept visible for a class project, demo day, or portfolio piece.</p>
+        </article>
+        <article class="card">
+          <h3>Marketers &amp; operators</h3>
+          <p>Prototype landing pages, campaign tools, dashboards, or internal workflows without waiting on dev capacity.</p>
+        </article>
+        <article class="card">
+          <h3>Early-stage founders</h3>
+          <p>Show investors and teammates something concrete before hiring a full build.</p>
+        </article>
+        <article class="card">
+          <h3>Curious professionals</h3>
+          <p>Learn a practical AI-building workflow—not another listicle about tools.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap section-band" id="examples">
+      <div class="section-head">
+        <span class="kicker">Example projects</span>
+        <div class="section-head-body">
+          <h2 class="section-title">Concrete things you can build in one workshop.</h2>
+          <p class="section-lead">Scope stays realistic. The goal is visibility—something you can test, discuss, and improve.</p>
+        </div>
+      </div>
+      <div class="grid-4">
+        <article class="card">
+          <span class="label-pill pill-blue">Landing</span>
+          <h3>Startup landing page</h3>
+          <p>Clear promise, audience hook, signup flow, and honest demo behavior.</p>
+        </article>
+        <article class="card">
+          <span class="label-pill pill-coral">Dashboard</span>
+          <h3>Dashboard or report mockup</h3>
+          <p>Charts, filters, and sample data that show the concept without a full backend.</p>
+        </article>
+        <article class="card">
+          <span class="label-pill">Portfolio</span>
+          <h3>Portfolio site</h3>
+          <p>Project cards, case-study structure, and responsive layout you control.</p>
+        </article>
+        <article class="card">
+          <span class="label-pill pill-cyan">Workflow</span>
+          <h3>AI-assisted workflow prototype</h3>
+          <p>Simple automation or operator tool concept with clear in-scope vs out-of-scope notes.</p>
+        </article>
+      </div>
+      <p class="section-cta">
+        <a class="btn btn-accent" href="#signup">Get the Prototype Starter Kit</a>
+      </p>
+    </section>
+
+    <section class="section wrap section-band" id="pricing">
+      <div class="section-head">
+        <span class="kicker">Pricing</span>
+        <div class="section-head-body">
+          <h2 class="section-title">Start free. Level up when you want guided help.</h2>
+          <p class="section-lead">Example pricing for this landing page. Workshops are the next step after the free kit.</p>
+        </div>
+      </div>
+      <div class="grid-4">
+        <article class="card price-card featured">
+          <span class="label-pill">Free</span>
+          <h3>Prototype Starter Kit</h3>
+          <p class="price-amount">$0</p>
+          <ul class="price-list">
+            <li>Planning template</li>
+            <li>Build prompt template</li>
+            <li>Project file structure</li>
+            <li>Example project brief</li>
+          </ul>
+          <a class="btn btn-accent" href="#signup">Get the Prototype Starter Kit</a>
+        </article>
+        <article class="card price-card">
+          <span class="label-pill">Intro</span>
+          <h3>Vibe Coding Foundations</h3>
+          <p class="price-amount">$149 <small>/ person</small></p>
+          <ul class="price-list">
+            <li>Core workflow overview</li>
+            <li>Cursor walkthrough</li>
+            <li>Guided build exercise</li>
+          </ul>
+          <a class="btn btn-secondary" href="#signup">Join the next workshop</a>
+        </article>
+        <article class="card price-card">
+          <span class="label-pill">Full</span>
+          <h3>Idea to Prototype</h3>
+          <p class="price-amount">$299 <small>/ person</small></p>
+          <ul class="price-list">
+            <li>Bring your own idea</li>
+            <li>Build sprint + pair testing</li>
+            <li>Iteration sprint</li>
+          </ul>
+          <a class="btn btn-secondary" href="#signup">Join the next workshop</a>
+        </article>
+        <article class="card price-card">
+          <span class="label-pill">Team</span>
+          <h3>Private team session</h3>
+          <p class="price-amount">From $2,500</p>
+          <ul class="price-list">
+            <li>Custom examples</li>
+            <li>Group prototype lab</li>
+            <li>Shared templates</li>
+          </ul>
+          <a class="btn btn-secondary" href="mailto:hello@vibecodeacademy.example">Book a team session</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap section-band" id="signup">
+      <div class="signup-panel">
+        <div>
+          <div class="section-head">
+            <span class="kicker">Get started</span>
+            <div class="section-head-body">
+              <h2 class="section-title">Get the Prototype Starter Kit</h2>
+              <p class="section-lead">
+                Enter your email to request the templates and project structure. Form behavior is added in a later phase—this prototype collects markup only for now.
+              </p>
+            </div>
+          </div>
+        </div>
+        <form class="signup-form" action="#" method="get">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@school.edu" />
+          </div>
+          <button type="submit" class="btn btn-accent">Get the Prototype Starter Kit</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section wrap" id="faq">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <div class="section-head-body">
+          <h2 class="section-title">Straight answers for beginners.</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Do I need to know how to code?</summary>
+          <p>No advanced coding required. You will work inside Cursor with guided steps. Clear thinking matters more than syntax memorization.</p>
+        </details>
+        <details>
+          <summary>What tools will we use?</summary>
+          <p>Primarily Cursor, plus planning templates and project files. You learn how to keep context in a folder instead of losing it in chat.</p>
+        </details>
+        <details>
+          <summary>Is this a finished software product or a prototype?</summary>
+          <p>A prototype artifact you can show and test—not production-ready software. Engineering, payments, and deployment are out of workshop scope.</p>
+        </details>
+        <details>
+          <summary>What happens after I sign up for the starter kit?</summary>
+          <p>You receive the kit materials (simulated in this demo). From there you can join an intro ($149) or full workshop ($299) when you want guided help.</p>
+        </details>
+        <details>
+          <summary>Is this workshop a fit if I am not technical?</summary>
+          <p>Yes, if you have a real idea and are willing to plan before you prompt. The class is built for smart beginners, not career engineers.</p>
+        </details>
+        <details>
+          <summary>Does the signup form send real email in this prototype?</summary>
+          <p>No. This page is a teaching demo. Signup is simulated in a later build phase—nothing is stored or emailed until you wire a real backend.</p>
+        </details>
+        <details>
+          <summary>Will AI build the whole thing for me?</summary>
+          <p>AI can build fast—it still needs your direction. We teach you to plan, prompt, review, and test so you stay responsible for the result.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p><span class="accent-dot" aria-hidden="true"></span><strong class="footer-brand-title">Vibe Code Academy</strong></p>
+          <p>Craft / Code / Critique / Repeat</p>
+          <p>Live online workshop · ~3 hours · Cohort dates announced after starter kit signup</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#outcomes">Outcomes</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#examples">Example projects</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get started</h4>
+          <ul>
+            <li><a href="#signup">Get the Prototype Starter Kit</a></li>
+            <li><a href="#pricing">Join a workshop</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Vibe Code Academy</span>
+        <span>Demo prototype · Phase 2 brand design system</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

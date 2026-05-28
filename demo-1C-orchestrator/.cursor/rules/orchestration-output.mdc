@@ -1,0 +1,19 @@
+---
+description: Phase orchestrator — outputs per gate decision
+alwaysApply: true
+---
+
+# Orchestration output
+
+After QA test for phase N:
+
+| Decision | Orchestrator actions |
+| --- | --- |
+| **pass** | `QA-plan/QA-results/YYYY-MM-DD-phase-N-qa-results.md` + update `QA-plan/QA-results/00-index.md` |
+| **pass_with_risks** | `QA-plan/QA-human-test/phase-N-<slug>.html` (HTML only, never Markdown). Phase not closed until user reports `Human test done for phase N` or waives |
+| **fail** | Append `## Fix round <n>` to `build-plan/phases/*phase-N*`; rebuild if build in scope; retest |
+| **blocked** | Stop; list missing inputs |
+
+On **Human test done for phase N**: record evidence in QA-results, set index to `pass`, close phase.
+
+The orchestrator owns build-file fix rounds and human-test HTML — not subagents.
